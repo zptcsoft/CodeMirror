@@ -25,6 +25,10 @@
      "[keyword struct] [def bar]{}",
      "[variable-3 int] [variable-3 *][def baz]() {}");
 
+  MT("def_new_line",
+     "::[variable std]::[variable SomeTerribleType][operator <][variable T][operator >]",
+     "[def SomeLongMethodNameThatDoesntFitIntoOneLine]([keyword const] [variable MyType][operator &] [variable param]) {}")
+
   MT("double_block",
      "[keyword for] (;;)",
      "  [keyword for] (;;)",
@@ -48,4 +52,8 @@
     "[number 0b10'000];",
     "[number 0x10'000];",
     "[string '100000'];");
+
+  MTCPP("ctor_dtor",
+     "[def Foo::Foo]() {}",
+     "[def Foo::~Foo]() {}");
 })();
